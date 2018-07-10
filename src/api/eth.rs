@@ -337,6 +337,12 @@ impl<T: Transport> Eth<T> {
     pub fn syncing(&self) -> CallResult<SyncState, T::Out> {
         CallResult::new(self.transport.execute("eth_syncing", vec![]))
     }
+
+    /// Parity next nonce
+    pub fn parity_next_nonce(&self, address: Address) -> CallResult<U256, T::Out> {
+        let address = helpers::serialize(&address);
+        CallResult::new(self.transport.execute("parity_nextNonce", vec![address]))
+    }
 }
 
 #[cfg(test)]
