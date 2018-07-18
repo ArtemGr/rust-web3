@@ -175,7 +175,7 @@ impl<T: Transport> Future for TransactionReceiptBlockNumber<T> {
     }
 }
 
-struct TransactionReceiptBlockNumberCheck<T: Transport> {
+pub struct TransactionReceiptBlockNumberCheck<T: Transport> {
     eth: Eth<T>,
     hash: H256,
 }
