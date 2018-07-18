@@ -161,7 +161,7 @@ where
     Confirmations::new(eth, eth_filter, poll_interval, confirmations, check)
 }
 
-struct TransactionReceiptBlockNumber<T: Transport> {
+pub struct TransactionReceiptBlockNumber<T: Transport> {
     future: CallResult<Option<TransactionReceipt>, T::Out>,
 }
 
