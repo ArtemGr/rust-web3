@@ -181,7 +181,7 @@ pub struct TransactionReceiptBlockNumberCheck<T: Transport> {
 }
 
 impl<T: Transport> TransactionReceiptBlockNumberCheck<T> {
-    fn new(eth: Eth<T>, hash: H256) -> Self {
+    pub fn new(eth: Eth<T>, hash: H256) -> Self {
         TransactionReceiptBlockNumberCheck { eth, hash }
     }
 }
